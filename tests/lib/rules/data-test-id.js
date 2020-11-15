@@ -31,19 +31,19 @@ ruleTester.run('data-test-id', rule, {
         },
         {
             filename: 'test.vue',
-            code: '<template><input data-test-id="test" model="test"></template>'
+            code: '<template><v-btn data-test-id="test" v-model="test" /></template>'
         }
     ],
 
     invalid: [
         {
             filename: 'test.vue',
-            code: '<template><input model="test"></template>',
-            output: '<template><input model="test"></template>',
+            code: '<template><input v-model="test"></template>',
+            output: '<template><input data-test-id="test" v-model="test"></template>',
             options: ['never'],
             errors: [
                 {
-                    message: "Element with model should have 'data-test-id'.",
+                    message: "Expected 'data-test-id' with v-model.",
                     type: 'VElement',
                     line: 1
                 }
@@ -52,12 +52,12 @@ ruleTester.run('data-test-id', rule, {
 
         {
             filename: 'test.vue',
-            code: '<template><custom model="test" /></template>',
-            output: '<template><custom model="test" /></template>',
+            code: '<template><custom v-model="test" /></template>',
+            output: '<template><custom data-test-id="test" v-model="test" /></template>',
             options: ['never'],
             errors: [
                 {
-                    message: "Element with model should have 'data-test-id'.",
+                    message: "Expected 'data-test-id' with v-model.",
                     type: 'VElement',
                     line: 1
                 }
