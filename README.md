@@ -35,16 +35,27 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "test-id/rule-name": 2
+        "test-id/data-test-id": 'error'
     }
 }
 ```
 
-## Supported Rules
+## Rule Details
 
-* Fill in provided rules here
+This rule aims to...
 
+Examples of **incorrect** code for this rule:
 
+```vue
 
+<input v-model="someModel">
 
+```
 
+Examples of **correct** code for this rule:
+
+```vue
+
+<input data-test-id="someUniqueString" v-model="someModel">
+
+```
