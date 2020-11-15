@@ -1,0 +1,32 @@
+{
+  "name": "eslint-plugin-test-id",
+  "version": "0.0.1",
+  "description": "This checks is data-test-id prop is present, on some tags which are useful for e2e testing",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "prashant swami",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "peerDependencies": {
+    "vue-eslint-parser": "^7.1.1",
+    "eslint": "^7.1.0"
+  },
+  "dependencies": {
+    "eslint-utils": "^2.1.0",
+    "requireindex": "~1.1.0",
+    "vue-eslint-parser": "^7.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.1.0",
+    "mocha": "^7.2.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "ISC"
+}
