@@ -16,27 +16,23 @@ Next, install `eslint-plugin-test-id`:
 $ npm install eslint-plugin-test-id --save-dev
 ```
 
-
 ## Usage
 
 Add `test-id` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
-    "plugins": [
-        "test-id"
-    ]
+  "plugins": ["test-id"]
 }
 ```
-
 
 Then configure the rules you want to use under the rules section.
 
 ```json
 {
-    "rules": {
-        "test-id/data-test-id": 'error'
-    }
+  "rules": {
+    "test-id/data-test-id": "error"
+  }
 }
 ```
 
@@ -60,58 +56,82 @@ Examples of **correct** code for this rule:
 
 ```
 
-## How Fix will work 
+## How Fix will work
 
 ### Scenario 1
+
 ```vue
 <template><custom v-model="test" /></template>
 ```
-will fix to 
+
+will fix to
+
 ```vue
-<template><input data-test-id="test" v-model="test"></template>
+<template><input data-test-id="test" v-model="test" /></template>
 ```
 
 ### Scenario 2
+
 ```vue
-<template><input v-model="test.again.src"></template>
+<template><input v-model="test.again.src" /></template>
 ```
-will fix to 
+
+will fix to
+
 ```vue
-<template><custom data-test-id="test.again.src" v-model="test.again.src" /></template>
+<template>
+  <custom data-test-id="test.again.src" v-model="test.again.src" />
+</template>
 ```
 
 ### Scenario 3
+
 ```vue
 <template><custom v-model="test.again" /></template>
 ```
-will fix to 
+
+will fix to
+
 ```vue
 <template><custom data-test-id="test.again" v-model="test.again" /></template>
 ```
 
 ### Scenario 4
+
 ```vue
 <template><custom v-model="test['again']" /></template>
 ```
-will fix to 
+
+will fix to
+
 ```vue
-<template><custom data-test-id="test.again" v-model="test['again']" /></template>
+<template>
+  <custom data-test-id="test.again" v-model="test['again']" />
+</template>
 ```
 
 ### Scenario 5
+
 ```vue
 <template><custom v-model="test[5]" /></template>
 ```
-will fix to 
+
+will fix to
+
 ```vue
 <template><custom data-test-id="test.5" v-model="test[5]" /></template>
 ```
 
 ### Scenario 5
+
 ```vue
 <template><custom v-model="test[5]['val']" /></template>
 ```
-will fix to 
+
+will fix to
+
 ```vue
-<template><custom data-test-id="test.5.val" v-model="test[5]['val']" /></template>
+<template>
+  <custom data-test-id="test.5.val" v-model="test[5]['val']" />
+</template>
 ```
