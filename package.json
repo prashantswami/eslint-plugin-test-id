@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-test-id",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "This checks is data-test-id prop is present, on some tags which are useful for e2e testing",
   "keywords": [
     "eslint",
@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "eslint-utils": "^2.1.0",
-    "requireindex": "~1.1.0",
     "vue-eslint-parser": "^7.1.1"
   },
   "devDependencies": {

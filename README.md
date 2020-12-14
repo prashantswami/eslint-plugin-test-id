@@ -40,6 +40,16 @@ Then configure the rules you want to use under the rules section.
 }
 ```
 
+You can also enable all the recommended rules at once:
+
+```json
+{
+  "extends": [
+    "plugin:test-id/recommended"
+  ]
+}
+```
+
 ## Rule Details
 
 This rule aims to...
@@ -60,13 +70,13 @@ Examples of **correct** code for this rule:
 
 ```
 
-## How Fix will work 
+## How Fix will work
 
 ### Scenario 1
 ```vue
 <template><custom v-model="test" /></template>
 ```
-will fix to 
+will fix to
 ```vue
 <template><input data-test-id="test" v-model="test"></template>
 ```
@@ -75,7 +85,7 @@ will fix to
 ```vue
 <template><input v-model="test.again.src"></template>
 ```
-will fix to 
+will fix to
 ```vue
 <template><custom data-test-id="test.again.src" v-model="test.again.src" /></template>
 ```
@@ -84,7 +94,7 @@ will fix to
 ```vue
 <template><custom v-model="test.again" /></template>
 ```
-will fix to 
+will fix to
 ```vue
 <template><custom data-test-id="test.again" v-model="test.again" /></template>
 ```
@@ -93,7 +103,7 @@ will fix to
 ```vue
 <template><custom v-model="test['again']" /></template>
 ```
-will fix to 
+will fix to
 ```vue
 <template><custom data-test-id="test.again" v-model="test['again']" /></template>
 ```
@@ -102,7 +112,7 @@ will fix to
 ```vue
 <template><custom v-model="test[5]" /></template>
 ```
-will fix to 
+will fix to
 ```vue
 <template><custom data-test-id="test.5" v-model="test[5]" /></template>
 ```
@@ -111,7 +121,7 @@ will fix to
 ```vue
 <template><custom v-model="test[5]['val']" /></template>
 ```
-will fix to 
+will fix to
 ```vue
 <template><custom data-test-id="test.5.val" v-model="test[5]['val']" /></template>
 ```
