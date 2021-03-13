@@ -184,5 +184,19 @@ ruleTester.run('data-test-id', rule, {
       ]
     },
 
+    {
+      filename: 'test.vue',
+      code: `<template><custom @change="go(testId)">Save</custom></template>`,
+      output: `<template><custom data-test-id="go" @change="go(testId)">Save</custom></template>`,
+      options: ['never'],
+      errors: [
+        {
+          message: "Expected 'data-test-id' with event.",
+          type: 'VElement',
+          line: 1
+        }
+      ]
+    },
+
   ]
 })
