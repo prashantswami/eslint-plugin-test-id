@@ -40,6 +40,10 @@ ruleTester.run('data-test-id', rule, {
     {
       filename: 'test.vue',
       code: '<template><custom data-test-id="someUniqueId" @change="doAction" >Go</custom></template>'
+    },
+    {
+      filename: 'test.vue',
+      code: '<template><custom :data-test-id="`someUniqueId`" @change="doAction" >Go</custom></template>'
     }
   ],
 
@@ -225,6 +229,5 @@ ruleTester.run('data-test-id', rule, {
         }
       ]
     },
-
   ]
 })
