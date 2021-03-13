@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-test-id",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "This checks is data-test-id prop is present, on some tags which are useful for e2e testing",
   "keywords": [
     "eslint",
