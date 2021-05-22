@@ -1,3 +1,4 @@
+![status](https://github.com/prashantswami/eslint-plugin-test-id/actions/workflows/pull-requests.yml/badge.svg)
 # eslint-plugin-test-id
 
 This checks is data-test-id prop is present, on some tags which are useful for e2e testing
