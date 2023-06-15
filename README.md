@@ -1,5 +1,5 @@
 ![status](https://github.com/prashantswami/eslint-plugin-test-id/actions/workflows/pull-requests.yml/badge.svg?branch=main)
-![npm](https://badge.fury.io/js/eslint-plugin-test-id.svg)
+[![npm version](https://badge.fury.io/js/eslint-plugin-test-id.svg)](https://badge.fury.io/js/eslint-plugin-test-id)
 
 # eslint-plugin-test-id
 
