@@ -18,12 +18,12 @@
     "test": "mocha tests --recursive"
   },
   "peerDependencies": {
-    "vue-eslint-parser": "^8.0.0",
+    "vue-eslint-parser": "^9.3.1",
     "eslint": "^8.1.0"
   },
   "dependencies": {
     "eslint-utils": "^3.0.0",
-    "vue-eslint-parser": "^8.0.0"
+    "vue-eslint-parser": "^9.3.1"
   },
   "devDependencies": {
     "eslint": "^8.1.0",
